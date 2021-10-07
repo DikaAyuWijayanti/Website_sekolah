@@ -1,0 +1,13 @@
+.identitas{
+ background: blueviolet;
+ font-size: 24pt;
+ text-align: center;
+ font-style: bold;
+ font-family: Trebuchet MS;
+ width:400px;
+}
+body{
+	background: url('images/bunga2.jpeg');
+	background-repeat:repeat,repeat; 
+	color: black;
+}

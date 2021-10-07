@@ -1,0 +1,13 @@
+.visimisi{
+ background: white;
+ font-size: 24pt;
+ text-align: center;
+ font-style: bold;
+ font-family: Trebuchet MS;
+ width:400px;
+}
+body{
+	background: url('images/visi.jpg');
+	background-repeat:repeat,repeat; 
+	color: black;
+}
