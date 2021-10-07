@@ -14,8 +14,8 @@
                 <div class="cleared reset-box"></div>
                 <div class="art-header-inner">
                 <div class="art-headerobject"></div>
-                <left><img src="../Website Sekolah/images/images.jpg"height="150" width="150"></img></left>
-                <right><img src="../Website Sekolah/images/logo-osis.jpg" style="float: right" height="150"  margin: 0px 10px 10px 0px width="150" ></img></right>
+                <left><img src="../website_sekolah/images/images.jpg"height="150" width="150"></img></left>
+                <right><img src="../website_sekolah/images/logo-osis.jpg" style="float: right" height="150"  margin: 0px 10px 10px 0px width="150" ></img></right>
                 <div class="art-logo">
                 
                     </div>
