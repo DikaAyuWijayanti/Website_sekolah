@@ -209,7 +209,7 @@
 											<div class="art-box-body art-blockcontent-body">
 										
 										<ul>
-						<li><a href="selectTabelSiswa.php">Data Siswa</a></li>
+						<li><a href="tampiltabelsiswa.php">Data Siswa</a></li>
 						</ul>                 
 																<div class="cleared"></div>
 											</div>

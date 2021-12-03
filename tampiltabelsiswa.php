@@ -6,27 +6,28 @@
 	<table>
 		<a href="index.php">Kembali</a>
 		<tr>
-			<th> NIP</th>
+			<th> ID</th>
 			<th> Nama </th>
 			<th> Alamat </th>
-			<th> Pangkat </th>
+			<th> Kelas </th>
+			<th> Jurusan </th>
 
 		</tr>
 		<?php
 		include "koneksi.php";
 
-		$query = "SELECT * FROM kepala_sekolah";
+		$query = "SELECT * FROM datasiswa";
 		$result = mysqli_query($connect, $query);
 
 		if(mysqli_num_rows($result) > 0){
 			while($row = mysqli_fetch_array($result)){
 				?>
 				<tr>
-					<td> <?php echo $row["nip"] ?> </td><
+					<td> <?php echo $row["id"] ?> </td><
 					<td> <?php echo $row["nama"] ?></td>
-					<td> <?php echo $row["jabatan"] ?></td>
-					<td> <?php echo $row["kontak"] ?></td>
 					<td> <?php echo $row["alamat"] ?></td>
+					<td> <?php echo $row["kelas"] ?></td>
+					<td> <?php echo $row["jurusan"] ?></td>
 					<?php
 			}
 		}
@@ -34,7 +35,6 @@
 			echo " 0 results";
 		}
 		?>
-		<a href="dahulu.php">Data Kepala Sekolah periode 2000/2020</a>
 	</table>
 </body>
 </html>

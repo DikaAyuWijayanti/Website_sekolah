@@ -14,7 +14,7 @@
 		<?php
 		include "koneksi.php";
 
-		$query = "SELECT * FROM kepalasekolah";
+		$query = "SELECT * FROM kepala_sekolah";
 		$result = mysqli_query($connect, $query);
 
 		if(mysqli_num_rows($result) > 0){
