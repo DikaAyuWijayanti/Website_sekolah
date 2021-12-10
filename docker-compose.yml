@@ -1,38 +1,39 @@
 version: '3.5'
 services:
-  app:
-      image: dika6/kuis2
-      container_name: web-server
-      build: 
-          context: ./php
-          dockerfile: Dockerfile
-      depends_on:
-          - db
-      volumes:
-          - ./php/website_sekolah:/var/www/html/
-      ports:
-          - 8000:80
+  php-apache-environment:
+    image: dika6/dika-kuis2
+    container_name: apache_dika
+    depends_on:
+      - db
+    volumes: 
+      - ./website_sekolah/:/var/www/html
+    ports:
+      - 8000:80
+    network:
+      - backend
 
   db:
-      container_name: db
-      image: mysql
-      restart: always
+     container_name: website_dika
+     image: dika6/dika-kuis2
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD:admin
+       MYSQL_DATABASE:website_dika
+     ports:
+       - "3306:3306"
+     volumes:
+       - db:/var/lib/mysql
+       - ./website_dika.sql:/docker-entrypoint-initdb.d/website_dika.sql
+     networks:
+       - backend
 
-      environment:
-          MYSQL_ROOT_PASSWORD: 
-          MYSQL_DATABASE: website_sekolah
-          MYSQL_USER: admin
-          MYSQL_PASSWORD: 
-      ports:
-          - 3306:3306
+volumes:
+  db:
 
-  phpmyadmin:
-      image: phpmyadmin/phpmyadmin
-      ports:
-          - '3306:80'
-      restart: always
-
-      environment:
-          PMA_HOST: db
-      depends_on: 
-          - db
+networks:
+  backend:
+    name: backend-network
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.0.0/24
