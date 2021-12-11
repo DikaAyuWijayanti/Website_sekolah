@@ -6,7 +6,7 @@ services:
     depends_on:
       - db
     volumes: 
-      - ./website_sekolah/:/var/www/html
+      - ./php/website_sekolah/:/var/www/html/
     ports:
       - 8000:80
     network:
@@ -17,8 +17,8 @@ services:
      image: dika6/dika-kuis2
      restart: always
      environment:
-       MYSQL_ROOT_PASSWORD:admin
-       MYSQL_DATABASE:website_dika
+       MYSQL_ROOT_PASSWORD: admin
+       MYSQL_DATABASE: website_dika
      ports:
        - "3306:3306"
      volumes:
